@@ -2,6 +2,7 @@
 # 將 EVIL_*/*imag*/{*.png,jpg} 與 highway_sunny_day_*/depth_output/{*.npy} 以「相同時間戳」做配對，
 # 再把同名(檔名stem)的影像與深度成對拷成 data/{train,val}/{images,depths}/
 # 目的地檔名加上 session 前綴，避免 000000.* 撞名。含 tqdm 進度條。
+#python pair_by_timestamp_split.py --root .\highway_sunny_day --img-subdir image --val-last 5 --out .\data_v2
 import argparse, re, datetime, shutil
 from pathlib import Path
 from tqdm import tqdm
